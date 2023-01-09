@@ -1,0 +1,16 @@
+
+
+Criar modelo com atribs.: question, noun, translation
+Criar os objetos do modelo a partir dos dados existentes
+
+from jogos_gramatica_ingles_app.models import *
+db = Nouns.objects.all()
+
+>>> from jogos_gramatica_ingles_app.models import *
+>>> from db_data import *
+>>> for i, index in enumerate(nouns):
+...     atrib_question = f'Qual o significado do substantitvo "{index}"?'
+...     atrib_name = index
+...     atrib_translation = nouns_pt_br[i]
+...     new_obj = Nouns(question=atrib_question, name=atrib_name, translation=atrib_translation)
+...     new_obj.save()

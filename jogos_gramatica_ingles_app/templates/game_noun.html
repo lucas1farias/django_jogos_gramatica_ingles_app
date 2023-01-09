@@ -1,0 +1,66 @@
+
+
+{% extends 'main.html' %}
+
+{% block title %}
+  <title>Treino de vocabulário de substantivos</title>
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="../../static/css/django_jogos_gramatica_ingles_app_game_noun_styles.css">
+{% endblock %}
+
+{% block body %}
+  <main>
+    <section>
+      <div>
+        <a href="{% url 'index' %}">Voltar</a>
+      </div>
+    </section>
+
+    <!-- Resetar pontuação -->
+    <section>
+      <div>
+        <!-- (js) resetScoresBtnEl -->
+        <input type="button" id="clear-data" value="Resetar pontuação">
+      </div>
+    </section>
+
+    <!-- 0 acerto(s) 0 erro(s) -->
+    <section id="score-counters" class="cover">
+    <div class="apply-flex-with-gap">
+
+      <div id="accurate"></div> <!-- (js) rightAnswer -->
+      <div id="mistaken"></div> <!-- (js) wrongAnswer -->
+
+    </div>
+  </section>
+
+    <!-- Qual o significado do substantito... -->
+    <section id="main-data" class="cover">
+      <div class="apply-flex-with-gap">
+        <div id="hidden-correct-answer" style="display: none;">{{ answer }}</div>
+        <div id="question">{{ question }}</div>
+
+        <div id="alternatives">
+          <ol>
+            {% for alternative in alternatives %}
+              <li>{{ alternative.translation }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digite a resposta (números entre 1 a 5) -->
+    <section id="answer-input">
+      <div class="apply-flex-with-gap mt">
+        <!-- (js) inputAnswerEl -->
+        <input id="answer" type="text" placeholder="Digite a resposta (números entre 1 a 5)" size="30">
+      </div>
+    </section>
+
+  </main>
+
+  <script type="text/javascript" src="../../static/js/django_jogos_gramatica_ingles_app_game_noun_scripts.js"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+
+
+body {
+  background-color: #222;
+  font-family: consolas;
+  letter-spacing: 2px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 95vh;
+  border: black solid 1px;
+  background-image: radial-gradient(#222, #444, black);
+  margin: 0 10rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  text-shadow: 0 0 10px ivory;
+  background-color: mediumseagreen;
+  padding: .5rem;
+  border: white solid 1.5px;
+  border-radius: .5rem;
+}
+
+.apply-flex-with-gap {
+  display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
